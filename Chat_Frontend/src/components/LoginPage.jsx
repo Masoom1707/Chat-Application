@@ -9,10 +9,17 @@ const LoginPage = () => {
     setShowPassword(!showPassword);
   };
 
-  const validateForm = () => {};
+  const {isLoggingIn, login} = useAuthStore()
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  })
+
 
   const handleLoginForm = (e) => {
     e.preventDefault();
+    login(formData)
   };
 
   return (
@@ -31,8 +38,10 @@ const LoginPage = () => {
             <input
               type="email"
               placeholder="xyz@example.com"
-              name="Email"
+              name="email"
               id="Email"
+              value={formData.email}
+              onChange={(e) => setFormData({...formData, email: e.target.value}) }
             />
           </div>
           <label htmlFor="Password">Password</label>
@@ -41,8 +50,10 @@ const LoginPage = () => {
             <input
               type={showPassword ? "text" : "password"}
               placeholder="******"
-              name="Password"
+              name="password"
               id="Password"
+              value={formData.password}
+              onChange={(e) => setFormData({...formData, password: e.target.value}) }
             />
             {showPassword ? (
               <EyeOff width={"20px"} onClick={toggleShowPass} className="eye_Icon" />
@@ -51,7 +62,7 @@ const LoginPage = () => {
             )}
           </div>
 
-          <button type="submit">Log In</button>
+          <button type="submit" disabled={isLoggingIn}>{isLoggingIn ? 'please wait..' : 'Log In'}</button>
           <p>
             Don't have an account?
             <NavLink to="/signup"> Create account</NavLink>

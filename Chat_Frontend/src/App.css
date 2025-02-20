@@ -4,9 +4,32 @@
 a{
   text-decoration: none;
 }
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vh 2vw;
+}
+.title h2{
+  font-size: 2.5vh;
+}
+.options button{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.options span{
+  font-size: 1.7vh;
+}
+.nav-User{
+  margin: 0 2vh;
+}
+
+
 .main_container{
-  background-color: #b2dbc6;
-  min-height: 97vh;
+  background-color: #26262f;
+  min-height: 93.8vh;
   width: 100%;
 }
 .upper_div{
@@ -78,3 +101,55 @@ a{
   margin-right: 10px;
   cursor: pointer;
 } 
+
+.profile_container{
+  background-color: rgb(13, 12, 12);
+  width: 45vh;
+  padding: 2vh 2.3vh;
+  color: rgb(216, 216, 216);
+}
+
+.profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pofile_info p{
+  border:2px solid #ffffff;
+  padding: 1vh 2vh;
+  border-radius: 1.2vh;
+  outline: none;
+  font-size: 2.2vh;
+}
+.fullname_sec{
+  display: flex;
+  align-items: center;
+  padding-left: 1.5vh;
+  margin-bottom: 0.6vh;
+  margin-top: 2vh;
+  font-size: 2.2vh;
+}
+
+.upper_profile_div{
+  font-size: 2.1vh;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.image_div{
+  background-color: rgb(145, 143, 143);
+  width: 15vh;
+  height: 15vh;
+  border-radius: 50%;
+  border: 0.7vh solid white;
+}
+.image_div img{
+  width:100%;
+  height: 100%;  
+  object-fit: cover;
+  border-radius: 50%;
+}
