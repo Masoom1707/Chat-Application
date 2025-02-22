@@ -12,7 +12,7 @@ const app = express();
 
 const PORT = process.env.PORT || 4000;
 
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
 app.use(cookieParser());
 app.use(cors({
   origin:"http://localhost:5173",
@@ -21,7 +21,7 @@ app.use(cors({
 
 app.use("/api/auth", authRoute);
 
-app.use("/api/message", messageRoute);
+app.use("/api/messages", messageRoute);
 
 connectDB().then(() => {
   app.listen(PORT, () => {

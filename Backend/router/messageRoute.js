@@ -4,8 +4,8 @@ import { checkAuth } from "../middleware/checkAuth.js";
 
 export const messageRoute = express.Router();
 
-messageRoute.get("/user", checkAuth, getUserData);
+messageRoute.get("/users", checkAuth, getUserData);
 
 messageRoute.get("/:id", checkAuth, getMessages);
 
-messageRoute.get("/send/:id", checkAuth, sendMessage);
+messageRoute.post("/send/:id", checkAuth, sendMessage);

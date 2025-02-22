@@ -40,7 +40,7 @@ const ProfilePage = () => {
           <p>
             {isUpdatingProfile
               ? "Uploading"
-              : "Click the icon to update your profile"}
+              : "Please use less tha 10mb file size"}
           </p>
         </div>
         <div className="lower_profile_div">
